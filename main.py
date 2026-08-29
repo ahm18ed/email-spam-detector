@@ -1,6 +1,13 @@
-def main():
-    print("Hello from email-spam-detector!")
+from src.model.predictor import predict_email
 
+email = input("Enter an email to classify: \n\n")
 
-if __name__ == "__main__":
-    main()
+prediction, probability = predict_email(email)
+
+if prediction == 1:
+    print("Spam")
+else:
+    print("Ham")
+
+print(f"Spam probability: {probability:.2f}")
+

@@ -434,6 +434,7 @@ name = "email-spam-detector"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "joblib" },
     { name = "kagglehub" },
     { name = "matlib" },
     { name = "pandas" },
@@ -448,6 +449,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "joblib", specifier = ">=1.5.3" },
     { name = "kagglehub", specifier = ">=1.0.2" },
     { name = "matlib", specifier = ">=0.1.2" },
     { name = "pandas", specifier = ">=3.0.5" },
