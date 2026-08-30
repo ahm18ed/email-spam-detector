@@ -1,0 +1,440 @@
+/* =========================================
+   MailGuard
+   ========================================= */
+
+:root {
+    --background: #F6F4EF;
+    --surface: #FFFFFF;
+
+    --text-primary: #222723;
+    --text-secondary: #666B65;
+    --text-muted: #8A8E88;
+
+    --border: #D9D7D0;
+
+    --accent: #426B57;
+
+    --radius-input: 14px;
+    --radius-button: 9px;
+
+    --content-width: 720px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    font-family:
+        "DM Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text-primary);
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.site-header {
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 56px;
+
+    background: var(--background);
+}
+
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+
+.brand-mark {
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    background: var(--text-primary);
+}
+
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+
+.model-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: #E9E7E1;
+
+    color: #535852;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+}
+
+.analyzer {
+    width: min(
+        var(--content-width),
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+
+    padding-top: 82px;
+
+    text-align: center;
+}
+
+
+.eyebrow {
+    margin: 0 0 2px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    color: #60645F;
+}
+
+
+.analyzer h1 {
+    margin: 0;
+
+    font-size: 48px;
+    line-height: 1.17;
+
+    font-weight: 600;
+
+    letter-spacing: -0.045em;
+}
+
+
+.intro {
+    max-width: 600px;
+
+    margin: 8px auto 34px;
+
+    font-size: 17px;
+    line-height: 26px;
+
+    color: var(--text-secondary);
+}
+
+.email-input-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 230px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-input);
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+.email-input-wrapper:focus-within {
+    border-color: #B6B4AD;
+
+    box-shadow:
+        0 0 0 3px rgba(66, 107, 87, 0.06);
+}
+
+
+#email-input {
+    width: 100%;
+    height: calc(100% - 42px);
+
+    padding: 22px 24px 12px;
+
+    resize: none;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--text-primary);
+
+    font: inherit;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+#email-input::placeholder {
+    color: #858A83;
+}
+
+
+.input-footer {
+    position: absolute;
+
+    left: 24px;
+    right: 24px;
+    bottom: 16px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+#character-count {
+    font-size: 12px;
+
+    color: var(--text-muted);
+}
+
+.analyze-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 13px 20px;
+
+    border: 0;
+    border-radius: var(--radius-button);
+
+    background: var(--text-primary);
+    color: #FFFFFF;
+
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 140ms ease,
+        background 140ms ease;
+}
+
+
+.analyze-button:hover {
+    background: #303531;
+}
+
+
+.analyze-button:active {
+    transform: translateY(1px);
+}
+
+
+.analyze-button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.privacy-note {
+    margin: 10px 0 0;
+
+    font-size: 12px;
+
+    color: var(--text-muted);
+}
+
+.how-it-works {
+    width: min(
+        1200px,
+        calc(100% - 48px)
+    );
+
+    margin: 40px auto 0;
+
+    padding-bottom: 64px;
+}
+
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+
+    background: var(--border);
+
+    margin-bottom: 24px;
+}
+
+
+.section-label {
+    margin: 0 0 24px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.07em;
+
+    color: #666A64;
+}
+
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 64px;
+}
+
+
+.step-number {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    color: #747873;
+}
+
+
+.step h2 {
+    margin: 0 0 6px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
+}
+
+
+.step p {
+    max-width: 280px;
+
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 20px;
+
+    color: var(--text-secondary);
+}
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height: 68px;
+
+        padding: 0 24px;
+    }
+
+
+    .brand-mark {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    .brand-name {
+        font-size: 17px;
+    }
+
+
+    .model-status {
+        padding: 6px 10px;
+
+        font-size: 12px;
+    }
+
+
+    .analyzer {
+        width: min(
+            calc(100% - 32px),
+            var(--content-width)
+        );
+
+        padding-top: 64px;
+    }
+
+
+    .analyzer h1 {
+        font-size: 38px;
+
+        letter-spacing: -0.04em;
+    }
+
+
+    .intro {
+        margin-top: 10px;
+
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+
+    .email-input-wrapper {
+        height: 250px;
+    }
+
+
+    .how-it-works {
+        width: calc(100% - 32px);
+
+        margin-top: 56px;
+    }
+
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .step p {
+        max-width: 100%;
+    }
+
+}
