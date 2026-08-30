@@ -1,9 +1,13 @@
+from pathlib import Path
+
 import joblib
 
 from src.preprocessing.cleaning import clean_text
 
-MODEL_PATH = "/home/ahmed/Projects/email-spam-detector/src/models/spam_classifier.pkl"
-VECTORIZER_PATH = "/home/ahmed/Projects/email-spam-detector/src/models/tfidf_vectorizer.pkl"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+MODEL_PATH = PROJECT_ROOT / "src" / "models" / "spam_classifier.pkl"
+VECTORIZER_PATH = PROJECT_ROOT / "src" / "models" / "tfidf_vectorizer.pkl"
 
 # Load the trained model and vectorizer
 model = joblib.load(MODEL_PATH)

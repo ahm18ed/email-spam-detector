@@ -1,16 +1,8 @@
-from src.model.predictor import predict_email
+from app import create_app
 
-print("Enter the email text.")
-print("Press Ctrl+D when finished.\n")
+app = create_app()
 
-email = input()
+if __name__ == "__main__":
+    app.run(debug=True)
 
-prediction, probability = predict_email(email)
-
-if prediction == 1:
-    print("Spam")
-else:
-    print("Ham")
-
-print(f"Spam probability: {probability:.2f}")
 
