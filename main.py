@@ -1,6 +1,9 @@
 from src.model.predictor import predict_email
 
-email = input("Enter an email to classify: \n\n")
+print("Enter the email text.")
+print("Press Ctrl+D when finished.\n")
+
+email = input()
 
 prediction, probability = predict_email(email)
 

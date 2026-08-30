@@ -5,17 +5,11 @@ from src.preprocessing.cleaning import clean_text
 MODEL_PATH = "/home/ahmed/Projects/email-spam-detector/src/models/spam_classifier.pkl"
 VECTORIZER_PATH = "/home/ahmed/Projects/email-spam-detector/src/models/tfidf_vectorizer.pkl"
 
-def load_model():
-    return joblib.load(MODEL_PATH)
-
-def load_vectorizer():
-    return joblib.load(VECTORIZER_PATH)
+# Load the trained model and vectorizer
+model = joblib.load(MODEL_PATH)
+vectorizer = joblib.load(VECTORIZER_PATH)
 
 def predict_email(text):
-
-    # Load the trained model and vectorizer
-    model = load_model()
-    vectorizer = load_vectorizer()
 
     # Clean the email
     cleaned_text = clean_text(text)
