@@ -93,6 +93,59 @@
 
         </section>
 
+        <section
+    id="result"
+    class="result"
+    hidden
+    aria-live="polite"
+>
+    <div class="result-header">
+
+        <span id="result-eyebrow" class="eyebrow">
+            ANALYSIS RESULT
+        </span>
+
+        <h2 id="result-title">
+            Looks legitimate
+        </h2>
+
+        <p id="result-description">
+            This email doesn't strongly resemble spam
+            based on the model's learned patterns.
+        </p>
+
+    </div>
+
+
+    <div class="probability">
+
+        <div class="probability-header">
+            <span>Spam probability</span>
+
+            <strong id="spam-probability">
+                0%
+            </strong>
+        </div>
+
+        <div class="probability-track">
+            <div
+                id="probability-fill"
+                class="probability-fill"
+            ></div>
+        </div>
+
+    </div>
+
+
+    <button
+        id="reset-button"
+        class="reset-button"
+        type="button"
+    >
+        Analyze another email →
+    </button>
+</section>
+
 
         <section class="how-it-works">
 
@@ -143,7 +196,10 @@
 
         </section>
 
-    </main>
+        
 
+    </main>
+    
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
