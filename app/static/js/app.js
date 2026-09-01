@@ -116,30 +116,30 @@ async function analyzeEmail() {
 
 
 function showResult(data) {
-
     const isSpam = data.prediction === 1;
-
-    const percentage =
-        data.spam_probability * 100;
-
+    const percentage = data.spam_probability * 100;
 
     resultTitle.textContent = isSpam
         ? "Likely spam"
         : "Looks legitimate";
 
-
     resultDescription.textContent = isSpam
         ? "This email contains patterns commonly associated with spam."
         : "This email doesn't strongly resemble spam based on the model's learned patterns.";
 
+    spamProbability.textContent = `${percentage.toFixed(1)}%`;
 
-    spamProbability.textContent =
-        `${percentage.toFixed(1)}%`;
+    probabilityFill.style.width = `${percentage}%`;
 
-
-    probabilityFill.style.width =
-        `${percentage}%`;
-
+    resultSection.classList.toggle("is-spam", isSpam);
+    resultSection.classList.toggle("is-safe", !isSpam);
 
     resultSection.hidden = false;
+
+    resultSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+});
+
+    
 }
