@@ -27,4 +27,4 @@ def predict_email(text):
     # Get probability of Spam
     spam_probability = model.predict_proba(text_vector)[0][1]
 
-    return prediction, spam_probability
+    return int(prediction), float(spam_probability)

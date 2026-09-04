@@ -628,14 +628,5 @@ SOFTWARE.
 
 ````
 
-Replace `<YOUR_NAME>` with your name before committing.
-
-For the separate `LICENSE` file, use the exact same MIT license text beginning with:
-
-```text
-MIT License
-
-Copyright (c) 2026 <YOUR_NAME>
-````
 
 
