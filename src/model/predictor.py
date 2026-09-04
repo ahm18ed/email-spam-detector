@@ -6,8 +6,8 @@ from src.preprocessing.cleaning import clean_text
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-MODEL_PATH = PROJECT_ROOT / "src" / "models" / "spam_classifier.pkl"
-VECTORIZER_PATH = PROJECT_ROOT / "src" / "models" / "tfidf_vectorizer.pkl"
+MODEL_PATH = PROJECT_ROOT / "models" / "spam_classifier.pkl"
+VECTORIZER_PATH = PROJECT_ROOT / "models" / "tfidf_vectorizer.pkl"
 
 # Load the trained model and vectorizer
 model = joblib.load(MODEL_PATH)

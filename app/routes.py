@@ -1,7 +1,11 @@
+import logging
 from flask import Flask, jsonify, render_template, request
 
 from src.model.predictor import predict_email
 
+logger = logging.getLogger(__name__)
+
+MAX_EMAIL_LENGTH  = 10000
 def register_routes(app: Flask) -> None:
 
 
@@ -24,7 +28,14 @@ def register_routes(app: Flask) -> None:
             return jsonify({
                 "error" : "The 'email' field is required."
             }), 400
-
+        
+        if len(email) > MAX_EMAIL_LENGTH:
+            return jsonify({
+                "error": (
+                    "Email is too long"
+                    "Maximum length is 10,000 characters."
+                )
+            }), 400
         try:
             prediction, spam_probability = predict_email(email)
 

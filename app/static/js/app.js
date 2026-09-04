@@ -71,47 +71,33 @@ async function analyzeEmail() {
     buttonText.textContent = "Analyzing...";
 
 
-    try {
+   try {
+    const response = await fetch("/predict", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email: email })
+    });
 
-        const response = await fetch("/predict", {
-            method: "POST",
+    const data = await response.json();
 
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify({
-                email: email
-            })
-        });
-
-
-        const data = await response.json();
-
-
-        if (!response.ok) {
-            throw new Error(
-                data.error || "Unable to analyze email."
-            );
-        }
-
-
-        showResult(data);
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(error.message);
-
-    } finally {
-
-        analyzeButton.disabled = false;
-
-        analyzeButton.classList.remove("loading");
-
-        buttonText.textContent = "Analyze email";
+    if (!response.ok) {
+        throw new Error(data.error || "Unable to analyze email.");
     }
+
+    // Small delay to make the analysis feel intentional.
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    showResult(data);
+} catch (error) {
+    console.error(error);
+    alert(error.message);
+} finally {
+    analyzeButton.disabled = false;
+    analyzeButton.classList.remove("loading");
+    buttonText.textContent = "Analyze email";
+}
 }
 
 
