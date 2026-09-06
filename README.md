@@ -5,10 +5,10 @@ A machine-learning-powered email spam detector built with Python, scikit-learn, 
 
 MailGuard analyzes the text of an email and predicts whether it is likely to be **spam** or **legitimate**, while also providing a spam probability through a clean web interface.
 
+---
 ## Preview 
 
 ![MailGuard interface](screenshots/mailguard.png)
----
 
 ## Overview
 
@@ -402,11 +402,11 @@ This creates the project environment and installs the required dependencies.
 ---
 
 ## Running the Application
-uv run python main.py
 
 Start the Flask application:
 
 ```bash
+uv run python main.py
 ```
 
 The application will be available at:
@@ -629,6 +629,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ````
-
-
-
