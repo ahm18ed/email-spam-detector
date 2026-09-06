@@ -5,6 +5,9 @@ A machine-learning-powered email spam detector built with Python, scikit-learn, 
 
 MailGuard analyzes the text of an email and predicts whether it is likely to be **spam** or **legitimate**, while also providing a spam probability through a clean web interface.
 
+## Preview 
+
+![MailGuard interface](screenshots/mailguard.png)
 ---
 
 ## Overview
@@ -98,6 +101,7 @@ Original:
 After preprocessing:
 "congratulations visit now"
 ```
+* Classification report
 
 The project intentionally keeps preprocessing relatively conservative rather than aggressively removing stopwords or applying stemming or lemmatization.
 
@@ -157,7 +161,6 @@ MailGuard evaluates classification performance using:
 * Recall
 * F1-score
 * Confusion matrix
-* Classification report
 
 ### Why F1-score matters
 
@@ -399,26 +402,27 @@ This creates the project environment and installs the required dependencies.
 ---
 
 ## Running the Application
+uv run python main.py
 
 Start the Flask application:
 
 ```bash
-uv run python main.py
 ```
 
 The application will be available at:
+
 
 ```text
 http://127.0.0.1:5000
 ```
 
 Open that address in your browser.
-
 ---
 
 ## Running in Development Mode
 
 For Flask debug mode on Linux or macOS:
+
 
 ```bash
 FLASK_DEBUG=1 uv run python main.py
@@ -427,7 +431,6 @@ FLASK_DEBUG=1 uv run python main.py
 Debug mode should only be used during development.
 
 ---
-
 ## Running Tests
 
 Run the test suite with:
@@ -437,6 +440,7 @@ uv run pytest
 ```
 
 The tests verify that the prediction pipeline returns:
+```
 
 * A valid prediction class
 * A valid probability between `0` and `1`
@@ -449,7 +453,6 @@ The machine-learning experimentation and exploratory analysis are documented in:
 
 ```text
 notebooks/exploration.ipynb
-```
 
 The notebook contains the development process used to explore:
 
@@ -467,6 +470,7 @@ The notebook contains the development process used to explore:
 * Cross-validation
 
 ---
+
 
 ## Model Artifacts
 
@@ -491,7 +495,6 @@ MailGuard is an educational machine-learning project and should not be treated a
 The current application analyzes email text supplied directly by the user and does not connect to external email services.
 
 The model may produce incorrect predictions, including:
-
 * False positives — legitimate emails classified as spam
 * False negatives — spam emails classified as legitimate
 
@@ -625,5 +628,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ````
+
+
+
