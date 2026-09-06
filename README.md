@@ -423,7 +423,6 @@ Open that address in your browser.
 
 For Flask debug mode on Linux or macOS:
 
-
 ```bash
 FLASK_DEBUG=1 uv run python main.py
 ```
@@ -431,6 +430,7 @@ FLASK_DEBUG=1 uv run python main.py
 Debug mode should only be used during development.
 
 ---
+
 ## Running Tests
 
 Run the test suite with:
@@ -440,10 +440,9 @@ uv run pytest
 ```
 
 The tests verify that the prediction pipeline returns:
-```
 
-* A valid prediction class
-* A valid probability between `0` and `1`
+- A valid prediction class
+- A valid probability between `0` and `1`
 
 ---
 
@@ -453,24 +452,24 @@ The machine-learning experimentation and exploratory analysis are documented in:
 
 ```text
 notebooks/exploration.ipynb
+```
 
 The notebook contains the development process used to explore:
 
-* Dataset structure
-* Missing values
-* Duplicate records
-* Class distribution
-* Email length
-* Text preprocessing
-* TF-IDF features
-* Model training
-* Model evaluation
-* N-gram experimentation
-* Hyperparameter tuning
-* Cross-validation
+- Dataset structure
+- Missing values
+- Duplicate records
+- Class distribution
+- Email length
+- Text preprocessing
+- TF-IDF features
+- Model training
+- Model evaluation
+- N-gram experimentation
+- Hyperparameter tuning
+- Cross-validation
 
 ---
-
 
 ## Model Artifacts
 
@@ -495,8 +494,9 @@ MailGuard is an educational machine-learning project and should not be treated a
 The current application analyzes email text supplied directly by the user and does not connect to external email services.
 
 The model may produce incorrect predictions, including:
-* False positives — legitimate emails classified as spam
-* False negatives — spam emails classified as legitimate
+
+- False positives — legitimate emails classified as spam
+- False negatives — spam emails classified as legitimate
 
 A machine-learning prediction should therefore not be considered a definitive security verdict.
 
@@ -508,14 +508,14 @@ For production use, additional security controls and detection techniques would 
 
 MailGuard currently has several limitations:
 
-* The model only considers the text supplied to it
-* Email headers are not analyzed
-* Attachments are not analyzed
-* Sender reputation is not considered
-* URLs are removed during preprocessing rather than analyzed for malicious characteristics
-* Adversarial or heavily obfuscated spam may reduce model performance
-* The model is trained on a fixed dataset and is not automatically retrained
-* Predictions depend on patterns learned from the training dataset
+- The model only considers the text supplied to it
+- Email headers are not analyzed
+- Attachments are not analyzed
+- Sender reputation is not considered
+- URLs are removed during preprocessing rather than analyzed for malicious characteristics
+- Adversarial or heavily obfuscated spam may reduce model performance
+- The model is trained on a fixed dataset and is not automatically retrained
+- Predictions depend on patterns learned from the training dataset
 
 These limitations provide opportunities for future development.
 
@@ -525,20 +525,20 @@ These limitations provide opportunities for future development.
 
 Potential improvements include:
 
-* Experimenting with additional classifiers
-* Automated hyperparameter optimization
-* Larger and more diverse datasets
-* Header and sender analysis
-* URL reputation analysis
-* Attachment analysis
-* Character-level features
-* Better detection of obfuscated spam
-* Configurable classification thresholds
-* Automated model retraining
-* Model versioning
-* Production deployment
-* Authentication and rate limiting for the API
-* More comprehensive test coverage
+- Experimenting with additional classifiers
+- Automated hyperparameter optimization
+- Larger and more diverse datasets
+- Header and sender analysis
+- URL reputation analysis
+- Attachment analysis
+- Character-level features
+- Better detection of obfuscated spam
+- Configurable classification thresholds
+- Automated model retraining
+- Model versioning
+- Production deployment
+- Authentication and rate limiting for the API
+- More comprehensive test coverage
 
 ---
 
@@ -563,6 +563,8 @@ The project was developed in stages:
 ```
 
 ---
+
+## Example
 
 ## Example
 
